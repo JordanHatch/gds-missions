@@ -1,6 +1,7 @@
 <%= semantic_form_for mission do |f| %>
   <%= f.input :name %>
   <%= f.input :team, collection: Team.all %>
+  <%= f.input :mission_patch, as: :file %>
 
   <%= f.actions %>
 <% end %>

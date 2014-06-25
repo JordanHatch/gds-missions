@@ -44,6 +44,6 @@ private
   end
 
   def mission_params
-    params.require(:mission).permit(:name, :team_id)
+    params.require(:mission).permit(:name, :team_id, :mission_patch)
   end
 end
