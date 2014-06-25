@@ -1,0 +1,11 @@
+<% content_for :name, "Teams" %>
+
+<ul>
+  <% @teams.each do |team| %>
+    <li><%= team.name %></li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Add a new team", new_team_path, class: 'btn btn-primary' %>
+</p>

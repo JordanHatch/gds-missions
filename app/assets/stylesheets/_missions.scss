@@ -1,0 +1,15 @@
+.missions-list {
+
+  ul.grid {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+
+      h3 {
+        @extend .h4;
+      }
+    }
+  }
+
+}

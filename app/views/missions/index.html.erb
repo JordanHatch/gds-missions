@@ -1,0 +1,17 @@
+<section class="missions-list">
+
+  <h1>In progress</h1>
+
+  <ul class="grid">
+    <% @missions.each do |mission| %>
+    <li>
+      <h3><%= link_to mission.name, mission_path(mission) %></h3>
+    </li>
+    <% end %>
+  </ul>
+
+  <p>
+    <%= link_to "Add a new mission", new_mission_path, class: 'btn btn-primary' %>
+  </p>
+
+</section>

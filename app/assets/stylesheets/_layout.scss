@@ -1,0 +1,32 @@
+#logo a {
+  font-size: 26px;
+  color: #fff;
+  display: block;
+  height: 80px;
+  width: 80px;
+  background: #0078ba;
+  text-align: center;
+  padding-top: 26px;
+  letter-spacing: 1px;
+  font-weight: 200;
+  margin-left: 50px;
+}
+
+header h2 {
+  padding: 22px 0;
+  border-bottom: 1px solid #eee;
+  font-weight: normal;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.content {
+  font-size: 20px;
+}
+
+section h1, h1.page-title {
+  @extend .h3;
+}

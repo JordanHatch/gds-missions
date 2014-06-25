@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: missions_development
+  username: missions
+  password:
+
+test:
+  <<: *default
+  database: missions_test
+  username: missions
+  password:
+
+production:
+  <<: *default
+  database: missions_production
+  username: missions
+  password: <%= ENV['MISSIONS_DATABASE_PASSWORD'] %>

@@ -1,0 +1,10 @@
+<% content_for :name, "Add a new team" %>
+
+<section class="team-form">
+
+  <%= semantic_form_for @team do |f| %>
+    <%= f.input :name %>
+    <%= f.actions %>
+  <% end %>
+
+</section>
