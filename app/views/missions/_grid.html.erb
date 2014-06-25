@@ -1,0 +1,17 @@
+<ul class="grid">
+  <% missions.each do |mission| %>
+  <li>
+    <% if mission.mission_patch.present? %>
+      <%= link_to mission_path(mission) do %>
+        <%= image_tag mission.mission_patch.thumb.url %>
+      <% end %>
+    <% end %>
+
+    <h3><%= link_to mission.name, mission_path(mission) %></h3>
+
+    <% if mission.team.present? %>
+      <p class="team"><%= mission.team.name %></p>
+    <% end %>
+  </li>
+  <% end %>
+</ul>

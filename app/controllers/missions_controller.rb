@@ -1,8 +1,9 @@
 class MissionsController < ApplicationController
-  before_filter :find_mission, only: [:show, :edit, :update]
+  before_filter :find_mission, only: [:show, :edit, :update, :complete]
 
   def index
-    @missions = Mission.all
+    @in_progress = Mission.in_progress
+    @completed = Mission.completed
   end
 
   def show
@@ -37,6 +38,16 @@ class MissionsController < ApplicationController
     end
   end
 
+  def complete
+    if @mission.complete!
+      flash.notice = "Mission has been marked as completed"
+    else
+      flash.error = "Mission could not be marked as completed"
+    end
+
+    redirect_to mission_path(@mission)
+  end
+
 private
 
   def find_mission
@@ -44,6 +55,6 @@ private
   end
 
   def mission_params
-    params.require(:mission).permit(:name, :team_id, :mission_patch)
+    params.require(:mission).permit(:name, :team_id, :mission_patch, :state)
   end
 end

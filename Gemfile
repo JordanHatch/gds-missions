@@ -4,6 +4,7 @@ gem 'rails', '4.1.1'
 gem 'pg'
 
 gem 'friendly_id', '~> 5.0.0'
+gem 'aasm', '~> 3.2.1'
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.7.0'

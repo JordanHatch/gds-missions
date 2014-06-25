@@ -1,5 +1,15 @@
 <% content_for :title, @mission.name %>
 
+<div class="state">
+  This mission is <strong><%= @mission.state.humanize.downcase %></strong>.
+
+  <% if @mission.in_progress? %>
+    <%= button_to "Complete", complete_mission_path(@mission),
+                              method: :put,
+                              class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
 <% if @mission.mission_patch.present? %>
   <%= link_to @mission.mission_patch.url do %>
     <%= image_tag @mission.mission_patch.thumb.url %>
