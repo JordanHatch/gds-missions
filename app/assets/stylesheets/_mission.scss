@@ -1,0 +1,29 @@
+.mission {
+  margin-top: 15px;
+
+  .state {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    margin: 20px 0;
+
+    form {
+      float: right;
+      margin-top: -3px; /* hacky fix to center within box */
+
+      input {
+        @extend .btn;
+        @extend .btn-default;
+      }
+    }
+
+    &.state-in-progress {
+      background: #2595c1;
+    }
+    &.state-completed {
+      background: #579b46;
+    }
+  }
+
+}
