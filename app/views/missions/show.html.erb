@@ -1,5 +1,11 @@
 <% content_for :title, @mission.name %>
 
+<% if @mission.mission_patch.present? %>
+  <%= link_to @mission.mission_patch.url do %>
+    <%= image_tag @mission.mission_patch.thumb.url %>
+  <% end %>
+<% end %>
+
 <p>
   <%= link_to "Edit mission", edit_mission_path(@mission), class: 'btn btn-primary' %>
 </p>
