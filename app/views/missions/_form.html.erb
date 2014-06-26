@@ -7,5 +7,8 @@
                                     rows: 5
                                   } %>
 
-  <%= f.actions %>
+  <%= f.actions do %>
+    <%= f.action :submit, button_html: { class: 'submit-form' } %>
+    <%= f.action :cancel, label: "go back" %>
+  <% end %>
 <% end %>
