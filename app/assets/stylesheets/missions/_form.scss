@@ -1,0 +1,20 @@
+.mission-form {
+  margin: 20px 0;
+
+  .mission-patch {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    overflow: auto;
+    position: relative;
+
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+    .input {
+      float: left;
+    }
+  }
+}

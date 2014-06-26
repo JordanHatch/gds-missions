@@ -1,6 +1,5 @@
 <%= semantic_form_for mission do |f| %>
   <%= f.input :name %>
-  <%= f.input :mission_patch, as: :file %>
   <%= f.input :short_description, as: :text,
                                   input_html: {
                                     rows: 5
@@ -8,6 +7,15 @@
 
   <%= f.input :team, collection: Team.all,
                      label: ("Team " + link_to("(manage teams)", teams_path)).html_safe %>
+
+  <div class="mission-patch">
+    <% if f.object.mission_patch.present? %>
+      <%= image_tag f.object.mission_patch.thumb.url %>
+      <%= f.input :mission_patch, as: :file, label: "Replace mission patch" %>
+    <% else %>
+      <%= f.input :mission_patch, as: :file %>
+    <% end %>
+  </div>
 
   <%= f.actions do %>
     <%= f.action :submit, button_html: { class: 'submit-form' } %>
