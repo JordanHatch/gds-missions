@@ -2,6 +2,10 @@
   <%= f.input :name %>
   <%= f.input :team, collection: Team.all %>
   <%= f.input :mission_patch, as: :file %>
+  <%= f.input :short_description, as: :text,
+                                  input_html: {
+                                    rows: 5
+                                  } %>
 
   <%= f.actions %>
 <% end %>
