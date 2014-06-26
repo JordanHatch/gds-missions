@@ -12,14 +12,18 @@
   margin-left: 50px;
 }
 
-header h2 {
-  padding: 22px 0;
-  border-bottom: 1px solid #eee;
-  font-weight: normal;
+header.primary {
+  @extend .row;
 
-  a {
-    text-decoration: none;
-    color: #000;
+  h2 {
+    padding: 22px 0;
+    border-bottom: 1px solid #eee;
+    font-weight: normal;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
   }
 }
 
