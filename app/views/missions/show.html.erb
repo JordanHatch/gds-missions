@@ -1,7 +1,14 @@
-<% content_for :title, @mission.name %>
+<% content_for :head_title, @mission.name %>
 
-<section class="mission row">  
-  <div class="col-md-4">
+<section class="mission">
+  <header>
+    <h1><%= @mission.name %></h1>
+    <% if @mission.team.present? %>
+      <h2 class="team-name"><%= @mission.team.name %></h2>
+    <% end %>
+  </header>
+
+  <article>
     <div class="mission-patch">
       <% if @mission.mission_patch.present? %>
         <%= link_to @mission.mission_patch.url do %>
@@ -10,21 +17,29 @@
       <% end %>
     </div>
 
-  </div>
+    <div class="information">
+      <div class="state state-<%= @mission.state.dasherize %>">
+        This mission is <strong><%= @mission.state.humanize.downcase %></strong>.
 
-  <div class="col-md-8">
-    <div class="state state-<%= @mission.state.dasherize %>">
-      This mission is <strong><%= @mission.state.humanize.downcase %></strong>.
+        <% if @mission.in_progress? %>
+          <%= button_to "Complete", complete_mission_path(@mission),
+                                    method: :put,
+                                    class: 'btn btn-primary' %>
+        <% end %>
+      </div>
 
-      <% if @mission.in_progress? %>
-        <%= button_to "Complete", complete_mission_path(@mission),
-                                  method: :put,
-                                  class: 'btn btn-primary' %>
+      <% if @mission.short_description.present? %>
+        <%= simple_format @mission.short_description %>
+      <% else %>
+        <p class="missing">
+          There's no description for this mission yet.
+          <%= link_to "Add one?", edit_mission_path(@mission) %>
+        </p>
       <% end %>
-    </div>
 
-    <p>
-      <%= link_to "Edit mission", edit_mission_path(@mission) %>
-    </p>
-  </div>
+      <p>
+        <%= link_to "Edit mission", edit_mission_path(@mission) %>
+      </p>
+    </div>
+  </article>
 </section>

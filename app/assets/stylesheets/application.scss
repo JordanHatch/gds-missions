@@ -6,8 +6,8 @@
 @import "formtastic-bootstrap";
 
 @import "layout";
-@import "mission";
-@import "missions";
 @import "forms";
 
+@import "missions/index";
+@import "missions/show";
 @import "missions/form";

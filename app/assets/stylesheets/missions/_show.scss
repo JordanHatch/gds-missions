@@ -1,0 +1,64 @@
+section.mission {
+  margin-top: 15px;
+  font-size: 18px;
+
+  header {
+    margin-bottom: 28px;
+
+    h1 {
+      @extend .h3;
+
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      @extend .h3;
+
+      font-weight: normal;
+      font-size: 19px;
+      color: #666;
+      padding: 0px;
+      margin: 0 0 8px;
+    }
+  }
+
+  article {
+    @extend .row;
+  }
+  .mission-patch {
+    @extend .col-md-4;
+  }
+  .information {
+    @extend .col-md-8;
+  }
+
+  .state {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    margin: 20px 0;
+
+    form {
+      float: right;
+      margin-top: -3px; /* hacky fix to center within box */
+
+      input {
+        @extend .btn;
+        @extend .btn-default;
+      }
+    }
+
+    &.state-in-progress {
+      background: #2595c1;
+    }
+    &.state-completed {
+      background: #579b46;
+    }
+  }
+
+  .missing {
+    font-style: italic;
+  }
+
+}
