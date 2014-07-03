@@ -4,7 +4,10 @@
 
   <%= semantic_form_for @team do |f| %>
     <%= f.input :name %>
-    <%= f.actions %>
+    <%= f.actions do %>
+      <%= f.action :submit, button_html: { class: 'submit-form' } %>
+      <%= f.action :cancel, label: "go back" %>
+    <% end %>
   <% end %>
 
 </section>

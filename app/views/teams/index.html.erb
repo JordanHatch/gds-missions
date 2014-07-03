@@ -1,12 +1,14 @@
-<% content_for :name, "Teams" %>
+<% content_for :title, "Teams" %>
 <% content_for :selected_nav_item, :teams %>
 
-<ul>
-  <% @teams.each do |team| %>
-    <li><%= team.name %></li>
-  <% end %>
-</ul>
+<section class="teams-list">
+  <ul>
+    <% @teams.each do |team| %>
+      <li><%= team.name %></li>
+    <% end %>
+  </ul>
 
-<p>
-  <%= link_to "Add a new team", new_team_path, class: 'btn btn-primary' %>
-</p>
+  <p>
+    <%= link_to "Add a new team", new_team_path, class: 'btn btn-primary' %>
+  </p>
+</section>
