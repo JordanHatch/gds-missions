@@ -1,4 +1,5 @@
 <section class="missions-list">
+<% content_for :selected_nav_item, :completed %>
 
   <h1>In progress</h1>
   <%= render partial: "grid", locals: { missions: @in_progress } %>
