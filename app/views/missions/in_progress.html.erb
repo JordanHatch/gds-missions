@@ -1,0 +1,7 @@
+<% content_for :selected_nav_item, :in_progress %>
+
+<section class="missions-list">
+  <h1>In progress</h1>
+
+  <%= render partial: "list", locals: { missions: @in_progress } %>
+</section>

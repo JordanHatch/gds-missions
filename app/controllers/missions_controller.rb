@@ -2,8 +2,11 @@ class MissionsController < ApplicationController
   before_filter :find_mission, only: [:show, :edit, :update, :complete]
 
   def index
-    @in_progress = Mission.in_progress
     @completed = Mission.completed
+  end
+
+  def in_progress
+    @in_progress = Mission.in_progress
   end
 
   def show

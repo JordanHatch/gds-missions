@@ -1,11 +1,8 @@
-<section class="missions-list">
 <% content_for :selected_nav_item, :completed %>
 
-  <h1>In progress</h1>
-  <%= render partial: "grid", locals: { missions: @in_progress } %>
+<section class="missions-list">
 
-  <h1>Completed</h1>
-  <%= render partial: "grid", locals: { missions: @completed } %> 
+  <%= render partial: "grid", locals: { missions: @completed } %>
 
   <p>
     <%= link_to "Add a new mission", new_mission_path, class: 'btn btn-primary' %>
