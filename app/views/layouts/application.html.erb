@@ -9,38 +9,23 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
     <header class="primary">
-      <div class="logo">
-        <h1><a href="#">GDS</a></h1>
-      </div>
-      <div class="inner">
-        <h2><%= link_to "Missions", root_path %></h2>
-        <nav>
-          <ul>
-            <%= nav_link :completed, "Completed", missions_path %>
-            <%= nav_link :in_progress, "In progress", in_progress_missions_path %>
-            <%= nav_link :teams, "Teams", teams_path %>
-          </ul>
-        </nav>
-      </div>
+      <h1><%= link_to "GDS Missions", root_path %></h1>
     </header>
 
-
-    <div class="row">
-      <div class="col-md-10 col-md-offset-2 content">
-        <% if flash.any? %>
-          <% flash.each do |key, message| %>
-            <div class="flash flash-<%= key %>"><%= message %></div>
-          <% end %>
+    <div class="content">
+      <% if flash.any? %>
+        <% flash.each do |key, message| %>
+          <div class="flash flash-<%= key %>"><%= message %></div>
         <% end %>
+      <% end %>
 
-        <% if content_for?(:title) %>
-          <h1 class="page-title"><%= content_for(:title) %></h1>
-        <% end %>
+      <% if content_for?(:title) %>
+        <h1 class="page-title"><%= content_for(:title) %></h1>
+      <% end %>
 
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </div>
 </body>

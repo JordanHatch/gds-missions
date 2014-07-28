@@ -1,64 +1,58 @@
 section.mission {
-  margin-top: 15px;
   font-size: 18px;
+  margin-top: -50px; /* Yep, this is nasty */
 
   header {
-    margin-bottom: 28px;
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #eee;
 
     h1 {
-      @extend .h3;
-
+      @extend .h2;
       margin: 0 0 8px;
     }
 
-    h2 {
-      @extend .h3;
+    .mission-patch {
+      text-align: center;
+      margin: 20px auto;
+    }
 
-      font-weight: normal;
-      font-size: 19px;
-      color: #666;
-      padding: 0px;
-      margin: 0 0 8px;
+    .metadata {
+      font-size: 16px;
+      color: #888;
+
+      span {
+        display: inline-block;
+      }
+      span::after {
+        padding: 4px 0;
+        content: "  •  "
+      }
+      span:last-child::after {
+        content: none;
+      }
     }
   }
 
   article {
-    @extend .row;
-  }
-  .mission-patch {
-    @extend .col-md-4;
+    @extend .col-md-8;
+    @extend .col-md-offset-2;
   }
   .information {
-    @extend .col-md-8;
-  }
-
-  .state {
-    display: block;
-    font-weight: bold;
-    color: #fff;
-    padding: 10px;
-    margin: 20px 0;
-
-    form {
-      float: right;
-      margin-top: -3px; /* hacky fix to center within box */
-
-      input {
-        @extend .btn;
-        @extend .btn-default;
-      }
-    }
-
-    &.state-in-progress {
-      background: #2595c1;
-    }
-    &.state-completed {
-      background: #579b46;
-    }
+    padding: 28px;
   }
 
   .missing {
     font-style: italic;
+  }
+
+  .actions {
+    padding-top: 28px;
+    font-size: 16px;
+
+    li {
+      list-style: disc;
+    }
   }
 
 }

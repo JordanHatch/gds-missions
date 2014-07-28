@@ -4,8 +4,9 @@
 
   <%= render partial: "grid", locals: { missions: @completed } %>
 
-  <p>
-    <%= link_to "Add a new mission", new_mission_path, class: 'btn btn-primary' %>
-  </p>
+  <ul class="actions">
+    <li><%= link_to "Add a new mission", new_mission_path %></li>
+    <li><%= link_to "See in-progress missions", in_progress_missions_path %></li>
+  </ul>
 
 </section>

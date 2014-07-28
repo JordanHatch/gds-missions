@@ -2,13 +2,6 @@
 
 <section class="mission">
   <header>
-    <h1><%= @mission.name %></h1>
-    <% if @mission.team.present? %>
-      <h2 class="team-name"><%= @mission.team.name %></h2>
-    <% end %>
-  </header>
-
-  <article>
     <div class="mission-patch">
       <% if @mission.mission_patch.present? %>
         <%= link_to @mission.mission_patch.url do %>
@@ -17,17 +10,18 @@
       <% end %>
     </div>
 
+    <h1><%= @mission.name %></h1>
+    <div class="metadata">
+      <% if @mission.team.present? %>
+        <span><%= @mission.team.name %></span>
+      <% end %>
+      <span><%= @mission.state.humanize.downcase %></span>
+    </div>
+
+  </header>
+
+  <article>
     <div class="information">
-      <div class="state state-<%= @mission.state.dasherize %>">
-        This mission is <strong><%= @mission.state.humanize.downcase %></strong>.
-
-        <% if @mission.in_progress? %>
-          <%= button_to "Complete", complete_mission_path(@mission),
-                                    method: :put,
-                                    class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-
       <% if @mission.short_description.present? %>
         <%= simple_format @mission.short_description %>
       <% else %>
@@ -36,10 +30,14 @@
           <%= link_to "Add one?", edit_mission_path(@mission) %>
         </p>
       <% end %>
-
-      <p>
-        <%= link_to "Edit mission", edit_mission_path(@mission) %>
-      </p>
     </div>
+
+    <ul class="actions">
+      <li><%= link_to "Edit mission", edit_mission_path(@mission) %></li>
+      <% if @mission.in_progress? %>
+        <li><%= link_to "Mark as completed", complete_mission_path(@mission),
+                                  method: :put %></li>
+      <% end %>
+    </ul>
   </article>
 </section>

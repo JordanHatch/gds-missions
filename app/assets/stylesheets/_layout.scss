@@ -1,38 +1,20 @@
 header.primary {
-  @extend .row;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  .logo {
-    @extend .col-md-2;
-
-    h1 a {
-      font-size: 26px;
-      color: #fff;
-      display: block;
-      height: 80px;
-      width: 80px;
-      background: #0078ba;
-      text-align: center;
-      padding-top: 26px;
-      letter-spacing: 1px;
-      font-weight: 200;
-      margin-left: 50px;
-    }
-  }
-
-  .inner {
-    @extend .col-md-10;
-
-    position: relative;
-  }
-
-  h2 {
-    font-weight: normal;
-    border-bottom: 1px solid #eee;
-    padding: 22px 0;
+  h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 15px;
 
     a {
-      text-decoration: none;
-      color: #000;
+      color: #fff;
+      background: #0078ba;
+      padding: 10px;
+      letter-spacing: 1px;
+      font-weight: 200;
+      display: inline-block;
     }
   }
 
@@ -49,9 +31,6 @@ header.primary {
 }
 
 .content {
+  margin-top: 70px;
   font-size: 20px;
-}
-
-section h1, h1.page-title {
-  @extend .h3;
 }

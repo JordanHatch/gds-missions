@@ -8,10 +8,6 @@
     <% end %>
 
     <h3><%= link_to mission.name, mission_path(mission) %></h3>
-
-    <% if mission.team.present? %>
-      <p class="team"><%= mission.team.name %></p>
-    <% end %>
   </li>
   <% end %>
 </ul>
