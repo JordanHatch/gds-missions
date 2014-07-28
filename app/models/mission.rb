@@ -1,10 +1,11 @@
 class Mission < ActiveRecord::Base
   include AASM
   extend FriendlyId
-  
+
   friendly_id :name, use: :slugged
 
   belongs_to :team
+  has_many :links
 
   mount_uploader :mission_patch, MissionPatchUploader
 
