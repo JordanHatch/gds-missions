@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
+gem 'rails', '4.1.4'
 gem 'pg'
 
 gem 'friendly_id', '~> 5.0.0'
