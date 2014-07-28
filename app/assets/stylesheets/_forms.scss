@@ -1,6 +1,40 @@
 .form-actions {
+  clear: both;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+
   .submit-form {
     @extend .btn;
     @extend .btn-primary;
   }
+}
+
+fieldset {
+  padding: 0;
+  margin: 5px 0 10px;
+
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
+}
+
+legend {
+  border: none;
+
+  @extend label;
+  font-size: 14px;
+}
+
+.add_nested_fields, .remove_nested_fields {
+  @extend .btn;
+  @extend .btn-xs;
+}
+
+.add_nested_fields {
+  @extend .btn-success;
+}
+
+.remove_nested_fields {
+  @extend .btn-danger;
+  float: right;
 }

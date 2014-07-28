@@ -46,6 +46,17 @@ section.mission {
     font-style: italic;
   }
 
+  .links {
+    h2 {
+      @extend .h3;
+    }
+
+    li {
+      padding: 3px 0;
+      font-size: 16px;
+    }
+  }
+
   .actions {
     padding-top: 28px;
     font-size: 16px;

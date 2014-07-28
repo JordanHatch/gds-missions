@@ -12,4 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_nested_form
 //= require_tree .
+
+$(function(){
+  $(".flash").each(function(i, item){
+    $(item).hide().slideDown('fast');
+
+    setTimeout(function(){
+      $(item).slideUp('fast');
+    }, 3000);
+  });
+});

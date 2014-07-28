@@ -59,6 +59,7 @@ private
 
   def mission_params
     params.require(:mission)
-          .permit(:name, :team_id, :mission_patch, :state, :short_description)
+          .permit(:name, :team_id, :mission_patch, :state, :short_description,
+                  links_attributes: [:title, :url, :id, :_destroy])
   end
 end

@@ -30,6 +30,17 @@
           <%= link_to "Add one?", edit_mission_path(@mission) %>
         </p>
       <% end %>
+
+      <% if @mission.links.any? %>
+        <div class="links">
+          <h2>Where we've written about this</h2>
+          <ul>
+            <% @mission.links.each do |link| %>
+              <li><%= link_to (link.title.present? ? link.title : link.url), link.url %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
 
     <ul class="actions">

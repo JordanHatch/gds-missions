@@ -7,6 +7,8 @@ class Mission < ActiveRecord::Base
   belongs_to :team
   has_many :links
 
+  accepts_nested_attributes_for :links, allow_destroy: true, reject_if: :all_blank
+
   mount_uploader :mission_patch, MissionPatchUploader
 
   aasm column: 'state' do

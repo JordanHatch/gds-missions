@@ -19,6 +19,7 @@ gem 'jquery-rails'
 
 gem 'formtastic'
 gem 'formtastic-bootstrap'
+gem 'nested_form'
 
 gem 'unicorn'
 gem 'foreman'

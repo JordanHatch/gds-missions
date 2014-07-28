@@ -17,8 +17,14 @@ class MissionPatchUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  process :convert => 'png'
+
   version :thumb do
     process :resize_to_fit => [250, 250]
+  end
+
+  version :tiny do
+    process :resize_to_fit => [100, 100]
   end
 
   def extension_white_list
@@ -26,7 +32,7 @@ class MissionPatchUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "patch.jpg" if original_filename
+    "patch.png" if original_filename
   end
 
 end

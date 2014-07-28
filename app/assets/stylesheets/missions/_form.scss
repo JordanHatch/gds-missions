@@ -1,20 +1,73 @@
 .mission-form {
-  margin: 20px 0;
+  @extend .col-md-8;
+  @extend .col-md-offset-2;
+
+  font-size: 14px;
+  margin-bottom: 40px;
+
+  header {
+    @extend .row;
+  }
+
+  h1 {
+    @extend .h3;
+    @extend .col-md-offset-4;
+    @extend .col-md-8;
+
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+}
+
+form.mission {
+  @extend .row;
 
   .mission-patch {
-    background: #eee;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin: 10px 0;
-    overflow: auto;
-    position: relative;
+    @extend .col-md-4;
+    text-align: center;
 
-    img {
-      float: left;
-      margin-right: 20px;
+    label {
+      display: block;
+      padding: 20px 0 6px;
     }
-    .input {
-      float: left;
+
+    button {
+      @extend .btn;
+      @extend .btn-default;
     }
+
+    .value {
+      display: block;
+      padding: 5px;
+      color: #666;
+    }
+
+    .no-patch {
+      width: 250px;
+      height: 250px;
+      background: #fcfcfc;
+      border: 1px dashed #ccc;
+      border-radius: 125px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .information {
+    @extend .col-md-8;
+  }
+
+  .form-actions {
+    @extend .col-md-8;
+    @extend .col-md-offset-4;
+    margin-top: 20px;
+  }
+
+  .link {
+    background: #f6f6f6;
+    padding: 10px;
+    margin: 8px 0;
+    position: relative;
+    overflow: auto;
   }
 }

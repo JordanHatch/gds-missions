@@ -1,6 +1,10 @@
-<% content_for :title, "Add a new mission" %>
+<% content_for :head_title, "Add a new mission" %>
 
 <section class="mission-form">
+
+  <header>
+    <h1>Add a new mission</h1>
+  </header>
 
   <%= render partial: "form", locals: { mission: @mission } %>
 

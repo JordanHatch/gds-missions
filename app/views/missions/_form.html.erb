@@ -1,19 +1,35 @@
-<%= semantic_form_for mission do |f| %>
-  <%= f.input :name %>
-  <%= f.input :short_description, as: :text,
-                                  input_html: {
-                                    rows: 5
-                                  } %>
-
-  <%= f.input :team, collection: Team.all,
-                     label: ("Team " + link_to("(manage teams)", teams_path)).html_safe %>
-
+<%= semantic_bootstrap_nested_form_for mission do |f| %>
   <div class="mission-patch">
     <% if f.object.mission_patch.present? %>
       <%= image_tag f.object.mission_patch.thumb.url %>
       <%= f.input :mission_patch, as: :file, label: "Replace mission patch" %>
     <% else %>
+      <span class="no-patch"></span>
       <%= f.input :mission_patch, as: :file %>
+    <% end %>
+  </div>
+
+  <div class="information">
+    <%= f.input :name %>
+    <%= f.input :team, collection: Team.all,
+                       label: ("Team " + link_to("(manage teams)", teams_path)).html_safe %>
+    <%= f.input :state, collection: Mission.aasm.states.map(&:name).map {|s| [s.to_s.humanize, s] },
+                        include_blank: false %>
+
+    <%= f.input :short_description, as: :text,
+                                    input_html: {
+                                      rows: 5
+                                    } %>
+
+    <%= f.inputs "Where have we written about this?" do %>
+      <%= f.fields_for :links do |link_form| %>
+        <div class="link">
+          <%= link_form.input :title, label: false, placeholder: "Link title" %>
+          <%= link_form.input :url, label: false, placeholder: "http://" %>
+          <%= link_form.link_to_remove "Delete link" %>
+        </div>
+      <% end %>
+      <%= f.link_to_add "Add a link", :links %>
     <% end %>
   </div>
 
