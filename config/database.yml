@@ -18,5 +18,4 @@ test:
 production:
   <<: *default
   database: missions_production
-  username: missions
   password: <%= ENV['MISSIONS_DATABASE_PASSWORD'] %>
