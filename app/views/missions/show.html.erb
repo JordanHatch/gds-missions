@@ -7,6 +7,8 @@
         <%= link_to @mission.mission_patch.url do %>
           <%= image_tag @mission.mission_patch.thumb.url %>
         <% end %>
+      <% else %>
+        <span class="no-patch"></span>
       <% end %>
     </div>
 
