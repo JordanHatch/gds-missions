@@ -11,6 +11,8 @@ class Mission < ActiveRecord::Base
 
   accepts_nested_attributes_for :links, allow_destroy: true, reject_if: :all_blank
 
+  scope :in_completion_order, -> { order('completed_on asc') }
+
   mount_uploader :mission_patch, MissionPatchUploader
 
   aasm column: 'state' do

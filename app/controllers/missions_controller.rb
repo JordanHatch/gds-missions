@@ -2,7 +2,7 @@ class MissionsController < ApplicationController
   before_filter :find_mission, only: [:show, :edit, :update, :complete]
 
   def index
-    @completed = Mission.completed
+    @completed = Mission.completed.in_completion_order
   end
 
   def in_progress
