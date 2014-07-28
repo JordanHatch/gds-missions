@@ -17,7 +17,12 @@
       <% if @mission.team.present? %>
         <span><%= @mission.team.name %></span>
       <% end %>
-      <span><%= @mission.state.humanize.downcase %></span>
+      <span>
+        <%= @mission.state.humanize.downcase %>
+        <% if @mission.completed? && @mission.completed_on.present? %>
+        on <%= @mission.completed_on.strftime('%e %b %Y') %>
+        <% end %>
+      </span>
     </div>
 
   </header>
