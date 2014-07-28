@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728153247) do
+ActiveRecord::Schema.define(version: 20140728212333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140728153247) do
     t.string   "mission_patch"
     t.string   "state"
     t.string   "short_description"
+    t.date     "completed_on"
   end
 
   add_index "missions", ["slug"], name: "index_missions_on_slug", unique: true, using: :btree

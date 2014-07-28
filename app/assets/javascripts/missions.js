@@ -18,6 +18,21 @@ $(function(){
       var filePath = $field.val().replace(/.+[\\\/]/, "");
       $valueLabel.text(filePath);
     })
-  })
+  });
+
+  var $stateField = $("#mission_state");
+  var $completedOnWrapper = $('#mission_completed_on_input');
+
+  var showCompletedOnIfInCompletedState = function(){
+    state = $stateField.val();
+    if (state == "completed") {
+      $completedOnWrapper.show();
+    } else {
+      $completedOnWrapper.hide();
+    }
+  }
+  showCompletedOnIfInCompletedState();
+  $stateField.on('change', showCompletedOnIfInCompletedState);
+
 
 });

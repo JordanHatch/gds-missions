@@ -15,6 +15,7 @@
                        label: ("Team " + link_to("(manage teams)", teams_path)).html_safe %>
     <%= f.input :state, collection: Mission.aasm.states.map(&:name).map {|s| [s.to_s.humanize, s] },
                         include_blank: false %>
+    <%= f.input :completed_on %>
 
     <%= f.input :short_description, as: :text,
                                     input_html: {
