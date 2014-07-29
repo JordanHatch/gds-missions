@@ -2,7 +2,7 @@
   <div class="mission-patch">
     <% if f.object.mission_patch.present? %>
       <div class="mission-patch-thumb">
-        <%= image_tag f.object.mission_patch.thumb_2x.url %>
+        <%= image_tag f.object.mission_patch.url %>
       </div>
       <%= f.input :mission_patch, as: :file, label: "Replace mission patch" %>
     <% else %>

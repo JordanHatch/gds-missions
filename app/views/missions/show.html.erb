@@ -1,35 +1,34 @@
 <% content_for :head_title, @mission.name %>
 
 <section class="mission">
-  <header>
-    <div class="mission-patch">
-      <% if @mission.mission_patch.present? %>
-        <%= link_to @mission.mission_patch.url do %>
-          <div class="mission-patch-thumb">
-            <%= image_tag @mission.mission_patch.thumb_2x.url %>
-          </div>
-        <% end %>
-      <% else %>
-        <span class="no-patch"></span>
+  <div class="mission-patch">
+    <% if @mission.mission_patch.present? %>
+      <%= link_to @mission.mission_patch.url do %>
+        <div class="mission-patch-thumb">
+          <%= image_tag @mission.mission_patch.url %>
+        </div>
       <% end %>
-    </div>
-
-    <h1><%= @mission.name %></h1>
-    <div class="metadata">
-      <% if @mission.team.present? %>
-        <span><%= @mission.team.name %></span>
-      <% end %>
-      <span>
-        <%= @mission.state.humanize.downcase %>
-        <% if @mission.completed? && @mission.completed_on.present? %>
-        on <%= @mission.completed_on.strftime('%e %b %Y') %>
-        <% end %>
-      </span>
-    </div>
-
-  </header>
+    <% else %>
+      <span class="no-patch"></span>
+    <% end %>
+  </div>
 
   <article>
+    <header>
+      <h1><%= @mission.name %></h1>
+      <div class="metadata">
+        <% if @mission.team.present? %>
+          <span><%= @mission.team.name %></span>
+        <% end %>
+        <span>
+          <%= @mission.state.humanize.downcase %>
+          <% if @mission.completed? && @mission.completed_on.present? %>
+          on <%= @mission.completed_on.strftime('%e %b %Y') %>
+          <% end %>
+        </span>
+      </div>
+    </header>
+
     <div class="information">
       <% if @mission.short_description.present? %>
         <%= simple_format @mission.short_description %>

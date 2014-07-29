@@ -2,7 +2,7 @@ $(function(){
 
   $("form.mission input[type='file']").each(function(i, item) {
     var $field = $(item);
-    var $button = $("<button type='button'>Select image</button>");
+    var $button = $("<button type='button'>Select an SVG</button>");
     var $valueLabel = $("<span class='value'></span>");
 
     $field.hide();

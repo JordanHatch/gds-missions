@@ -2,6 +2,10 @@ section.mission {
   font-size: 18px;
   margin-top: -50px; /* Yep, this is nasty */
 
+  .mission-patch {
+    margin: 20px auto;
+  }
+  
   header {
     text-align: center;
     padding-bottom: 28px;
@@ -10,13 +14,6 @@ section.mission {
     h1 {
       @extend .h2;
       margin: 0 0 8px;
-    }
-
-    .mission-patch {
-      margin: 20px auto;
-    }
-    .mission-patch-thumb {
-      margin: 0 auto;
     }
 
     .metadata {
