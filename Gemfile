@@ -10,6 +10,7 @@ gem 'aasm', '~> 3.2.1'
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.7.0'
+gem "fog", "~> 1.3.1"
 
 gem 'bootstrap-sass', '~> 3.1.1.1'
 gem 'sass-rails', '~> 4.0.3'
