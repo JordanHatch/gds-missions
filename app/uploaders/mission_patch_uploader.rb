@@ -23,6 +23,10 @@ class MissionPatchUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [250, 250]
   end
 
+  version :thumb_2x do
+    process :resize_to_fit => [500, 500]
+  end
+
   version :tiny do
     process :resize_to_fit => [100, 100]
   end

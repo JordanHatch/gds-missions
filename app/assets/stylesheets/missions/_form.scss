@@ -26,6 +26,10 @@ form.mission {
     @extend .col-md-4;
     text-align: center;
 
+    .mission-patch-thumb {
+      margin: 0 auto;
+    }
+
     label {
       display: block;
       padding: 20px 0 6px;

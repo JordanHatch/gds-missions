@@ -1,7 +1,9 @@
 <%= semantic_bootstrap_nested_form_for mission do |f| %>
   <div class="mission-patch">
     <% if f.object.mission_patch.present? %>
-      <%= image_tag f.object.mission_patch.thumb.url %>
+      <div class="mission-patch-thumb">
+        <%= image_tag f.object.mission_patch.thumb_2x.url %>
+      </div>
       <%= f.input :mission_patch, as: :file, label: "Replace mission patch" %>
     <% else %>
       <span class="no-patch"></span>

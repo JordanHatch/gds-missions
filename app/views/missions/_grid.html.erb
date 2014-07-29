@@ -3,7 +3,9 @@
   <li>
     <% if mission.mission_patch.present? %>
       <%= link_to mission_path(mission) do %>
-        <%= image_tag mission.mission_patch.thumb.url %>
+        <div class="mission-patch-thumb">
+          <%= image_tag mission.mission_patch.thumb_2x.url %>
+        </div>
       <% end %>
     <% end %>
 
