@@ -27,6 +27,17 @@
       <% end %>
 
       <%= yield %>
+
+      <% if user_signed_in? %>
+        <aside class="user">
+          <div class="user-with-image">
+            <span class="image" style="background-image: url('<%= current_user.image_url %>')"></span>
+            <%= current_user.name %>
+          </div>
+
+          <%= link_to 'sign out', sign_out_path %>
+        </div>
+      <% end %>
     </div>
   </div>
 </body>

@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 gem 'pg'
 
+gem 'omniauth-google-oauth2'
+
 gem 'friendly_id', '~> 5.0.0'
 gem 'aasm', '~> 3.2.1'
 

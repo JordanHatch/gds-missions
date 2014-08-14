@@ -1,0 +1,6 @@
+<div class="sign-in">
+  <p>To make changes to missions, you'll need to sign in with your GDS Google Account.</p>
+  <%= button_to "Sign in with Google", "/auth/google", class: 'btn btn-default btn-lg' %>
+</div>
+
+<%= render partial: 'developer' if use_developer_strategy? %>

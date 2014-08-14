@@ -1,5 +1,6 @@
 class MissionsController < ApplicationController
   before_filter :find_mission, only: [:show, :edit, :update, :complete]
+  before_filter :authenticate!, except: [:index, :in_progress, :show]
 
   def index
     @completed = Mission.completed.in_completion_order
