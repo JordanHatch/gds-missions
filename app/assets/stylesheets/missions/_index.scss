@@ -20,8 +20,8 @@
         line-height: 1.4;
       }
 
-      img {
-        padding-bottom: 10px;
+      .mission-patch-thumb {
+        margin-bottom: 15px;
       }
 
       .team {
@@ -60,11 +60,30 @@
   width: 250px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  padding-bottom: 0;
 
   img {
     display: block;
     width: 250px;
     height: 250px;
+    position: relative;
+    z-index: 1;
+    padding-bottom:0;
+  }
+
+  &:before {
+    content: ".";
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background: white;
+    z-index: 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    border-radius: 125px;
   }
 }
 
