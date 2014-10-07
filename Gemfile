@@ -27,6 +27,8 @@ gem 'nested_form'
 gem 'unicorn'
 gem 'foreman'
 
+gem 'newrelic_rpm'
+
 group :production do
   gem 'rails_12factor'
 end

@@ -87,6 +87,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.9.1)
+    newrelic_rpm (3.9.5.251)
     nokogiri (1.5.11)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -176,6 +177,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick (~> 3.7.0)
   nested_form
+  newrelic_rpm
   omniauth-google-oauth2
   pg
   rails (= 4.1.6)
