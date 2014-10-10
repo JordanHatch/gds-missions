@@ -1,3 +1,23 @@
+body.with-dashboard {
+  header {
+    position: static;
+    h1 {
+      padding: 0;
+      font-size: 19px;
+
+      a {
+        text-decoration: none;
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  .content{
+    margin-top: 20px;
+  }
+}
+
 .dashboard {
   position: relative;
 
