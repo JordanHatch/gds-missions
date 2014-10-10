@@ -1,6 +1,8 @@
 class MissionsController < ApplicationController
   before_filter :find_mission, only: [:show, :edit, :update, :complete]
-  before_filter :authenticate!, except: [:index, :in_progress, :show]
+  before_filter :authenticate!, except: [:index, :in_progress, :show, :random]
+
+  respond_to :html, :json
 
   def index
     @completed = Mission.completed.in_completion_order
@@ -11,7 +13,11 @@ class MissionsController < ApplicationController
   end
 
   def show
+    respond_with @mission
+  end
 
+  def random
+    redirect_to mission_path(Mission.random, format: params[:format])
   end
 
   def new

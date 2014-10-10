@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :missions do
     collection do
       get :'in-progress'
+      get :'random'
     end
 
     member do

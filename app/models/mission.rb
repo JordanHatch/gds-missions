@@ -15,6 +15,11 @@ class Mission < ActiveRecord::Base
 
   mount_uploader :mission_patch, MissionPatchUploader
 
+  def self.random
+    total = self.count
+    self.offset(rand(total)).first
+  end
+
   aasm column: 'state' do
     state :in_progress, initial: true
     state :completed
