@@ -20,6 +20,16 @@ class Mission < ActiveRecord::Base
     self.offset(rand(total)).first
   end
 
+  def as_json(context)
+    {
+      name: name,
+      team: {
+        name: (team || OpenStruct.new).name,
+      },
+      mission_patch_url: mission_patch.url,
+    }
+  end
+
   aasm column: 'state' do
     state :in_progress, initial: true
     state :completed

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
   resources :teams
 
+  get '/dashboard', to: 'dashboard#dashboard'
+
   resources :sessions, :only => :new do
     get :failure, :collection => true
   end

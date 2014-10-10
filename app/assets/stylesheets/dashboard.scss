@@ -1,0 +1,30 @@
+.dashboard {
+  position: relative;
+
+  .mission {
+    &.placeholder { display: none; }
+
+    position: relative;
+    height: 300px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      // width: 45%;
+      height: 280px;
+    }
+
+    .info {
+      position: absolute;
+      left: 50%;
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; font-weight: 300; }
+  }
+
+}

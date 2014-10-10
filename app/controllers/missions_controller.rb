@@ -61,7 +61,7 @@ class MissionsController < ApplicationController
 private
 
   def find_mission
-    @mission = Mission.friendly.find(params[:id])
+    @mission = Mission.friendly.includes(:team).find(params[:id])
   end
 
   def mission_params

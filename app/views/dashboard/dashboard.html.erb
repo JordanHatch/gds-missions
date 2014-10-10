@@ -1,0 +1,18 @@
+<div id="dashboard" class="dashboard">
+  <article class="mission placeholder">
+    <div class="wrapper">
+      <img src="">
+      <div class="info">
+        <h1></h1>
+        <h2></h2>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script type="text/javascript">
+  new Missions.Dashboard({
+    el: $('#dashboard'),
+    dataSource: '<%= random_missions_path(format: 'json') %>'
+  });
+</script>
