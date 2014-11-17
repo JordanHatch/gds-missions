@@ -6,6 +6,7 @@ class MissionsController < ApplicationController
 
   def index
     @completed = Mission.completed.in_completion_order
+    respond_with @completed
   end
 
   def in_progress
