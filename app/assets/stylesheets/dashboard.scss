@@ -16,6 +16,18 @@ body.with-dashboard {
   .content{
     margin-top: 20px;
   }
+
+  #message {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #0078ba;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    font-size: 28px;
+    width: 100%;
+  }
 }
 
 .dashboard {
