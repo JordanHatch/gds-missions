@@ -26,6 +26,7 @@ gem 'nested_form'
 
 gem 'unicorn'
 gem 'foreman'
+gem 'rack-ssl-enforcer'
 
 gem 'newrelic_rpm'
 
