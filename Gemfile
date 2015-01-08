@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
 
-gem 'formtastic'
+gem 'formtastic', '~> 2.3'
 gem 'formtastic-bootstrap'
 gem 'nested_form'
 
